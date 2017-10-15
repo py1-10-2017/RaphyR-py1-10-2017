@@ -1,19 +1,17 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request
 app = Flask(__name__)
+
 @app.route('/')
 def index():
-  return render_template("index.html")
-# this route will handle our form submission
-# notice how we defined which HTTP methods are allowed by this route
-@app.route('/feedback', methods=['POST'])
-def create_user():
-   print "Got Post Info"
-   # we'll talk about the following two lines after we learn a little more
-   # about forms
-   name = request.form['name']
-   email = request.form['location']
-   lang = request.form['language']
-   comments = request.form['comments']
-   # redirects back to the '/' route
-   return redirect('/feedback.html')
-app.run(debug=True) # run our server
+    return render_template('index.html')
+
+@app.route('/result', methods=["POST"])
+def result():
+    name = request.form['name']
+    location = request.form['location']
+    language = request.form['language']
+    comment = request.form['comment']
+
+    return render_template('result.html', name=name, location=location, language=language, comment=comment)
+
+app.run(debug=True)
