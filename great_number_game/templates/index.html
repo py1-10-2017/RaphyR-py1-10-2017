@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>The Great Number Game</title>
+</head>
+<style>
+  form {
+    display: inline-block;
+  }
+</style>
+<body>
+  <h1>Welcome to the Great Number Game!</h1>
+  <h3>I am thinking of a number between 1 and 100</h3>
+  <h3>Take a guess</h3>
+
+
+  <form action="/guess" method="post">
+    <input type="text" name="number">
+    <input type="submit" value="Guess">
+  </form>
+
+  <form action="/reset" method="post">
+    <input type="submit" value="Play Again">
+  </form>
+
+  {% if session['guess'] %}
+    {% if session['guess'] < session['random'] %}
+      <h1>too low</h1>
+    {% elif session['guess'] > session['random'] %}
+      <h1>too high</h1>
+    {% else %}
+      <h1>You got it!</h1>
+    {% endif %}
+  {% endif %}
+
+
+
+</body>
+</html>
