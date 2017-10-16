@@ -8,13 +8,6 @@
 <body>
   <h1>Dojo Survey</h1>
   <!-- Using Bootstrap CSS -->
-  {% with messages = get_flashed_messages() %}
-   {% if messages %}
-     {% for message in messages %}
-       <p>{{message}}</p>
-     {% endfor %}
-   {% endif %}
-  {% endwith %}
   <form action='/process' method='POST'>
     Name:<input type="text" name="name"><br>
     Dojo Location: <input type="text" name="location"><br>
@@ -22,7 +15,6 @@
     Comments
     <textarea type="submit" name="comments"></textarea><br>
     <input type="submit" value="Submit">
-
   </form>
 </body>
 </html>
