@@ -1,0 +1,12 @@
+.row {
+  width: 100%;
+  display: flex;
+}
+.col-3 {
+  width: 25%;
+}
+
+img {
+  height: 100px;
+  width: 100px;
+}

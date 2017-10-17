@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>Ninjas</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+  </head>
+  <body>
+    {% if color %}
+      {% if color == 'red' %}
+        <h2>Raph</h2>
+        <img src="{{ url_for('static', filename='images/raphael.jpg') }}">
+      {% elif color == 'blue' %}
+        <h2>Leo</h2>
+        <img src="{{ url_for('static', filename='images/leonardo.jpg') }}">
+      {% elif color == 'orange' %}
+        <h2>Mikey</h2>
+        <img src="{{ url_for('static', filename='images/michelangelo.jpg') }}">
+      {% elif color == 'purple' %}
+        <h2>Donnie</h2>
+        <img src="{{ url_for('static', filename='images/donatello.jpg') }}">
+      {% else %}
+        <h2>April</h2>
+        <img src="{{ url_for('static', filename='images/notapril.jpg') }}">
+      {% endif %}
+    {% else %}
+      <div class="row">
+        <div class="col-3">
+          <h2>Michaelangelo</h2>
+          <img src="{{ url_for('static', filename='images/michelangelo.jpg') }}">
+        </div>
+        <div class="col-3">
+          <h2>Leonardo</h2>
+          <img src="{{ url_for('static', filename='images/leonardo.jpg') }}">
+        </div>
+        <div class="col-3">
+          <h2>Donatello</h2>
+          <img src="{{ url_for('static', filename='images/donatello.jpg') }}">
+          <!-- <img src="Retro_donnie.gif" alt="Donatello"> -->
+        </div>
+        <div class="col-3">
+          <h2>Raphael</h2>
+          <img src="{{ url_for('static', filename='images/raphael.jpg') }}">
+        </div>
+      </div>
+    {% endif %}
+  </body>
+</html>
