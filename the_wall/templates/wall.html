@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Coding Dojo Wall</title>
+  <style>
+    header {
+      padding: 0px 25px;
+      border-bottom: 1px solid black;
+    }
+    .inlineb {
+      display: inline-block;
+    }
+    #sidecontent {
+      float: right;
+    }
+    .logoff {
+      margin-left: 40px;
+    }
+    form#msg{
+      /*display: block;*/
+      display: table;
+      margin: auto;
+      padding-top: 50px;
+    }
+    form#comment{
+      /*display: table;
+      margin: auto;*/
+      padding: 10px 30px;
+    }
+    .messages {
+      margin: 50px;
+      /*padding: 0 50px;*/
+
+    }
+    p {
+      margin: 0;
+    }
+    .comments {
+      margin-left: 50px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2 class="inlineb">CodingDojo Wall</h2>
+    <div id="sidecontent" class="inlineb">
+      <h2 class="inlineb">Hello, {{session['first_name']}}</h4>
+      <a href="/logout" class="inlineb logoff">Logoff</a>
+    </div>
+  </header>
+  <section>
+    <form action="/message" method="POST" id="msg">
+      <textarea name="message" id="" cols="180" rows="8"></textarea><br><br>
+      <input type="submit" value="Post a message">
+    </form>
+    <div class="messages">
+      {% for message in messages %}
+        <h3>{{message.first_name}} {{message.last_name}} {{message.messages_created}} </h3>
+        <p>{{message.message}}</p>
+        <div class="comments">
+          {% for comment in comments %}
+            {% if comment['message_id'] == message['id'] %}
+                <h5>{{comment['first_name']}} {{comment['last_name']}} {{comment['comment_created']}} </h5>
+                <p>{{comment['comment']}}</p>
+              {% endif %}
+            {% endfor %}
+        </div>
+        <form action="/message/{{message.id}}/comment" method="POST" id="comment">
+          <textarea name="comment" id="" cols="100" rows="3"></textarea><br>
+          <input type="submit" value="Post a comment">
+        </form>
+      {% endfor %}
+    </div>
+  </section>
+
+</body>
+</html>
