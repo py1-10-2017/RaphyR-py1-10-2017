@@ -1,26 +1,25 @@
 class Bike(object):
     def __init__(self, price, max_speed):
-        miles = 0
         self.price = price
         self.max_speed = max_speed
-        self.miles = miles
+        self.miles = 0
     def displayInfo(self):
         print self.price
         print self.max_speed
         print self.miles
-        return self
+
     def ride(self):
-        self.logged = False
         self.miles += 10
         print "Riding. Total mileage " + str(self.miles)
-        return self
+
     def reverse(self):
-        self.miles -= 5
-        # if self.miles < 0:
-        #     print "This car is coming to a stop."
-        # else:
-        print "Reversing. " + str(self.miles)
-        return self
+        if self.miles < 0:
+            self.miles = 0
+            print "This car is coming to a stop."
+        else:
+            self.miles -= 5
+            print "Reversing. " + str(self.miles)
+
 
 bike1 = Bike(200, "25mph")
 bike2 = Bike(500, "39mph")
