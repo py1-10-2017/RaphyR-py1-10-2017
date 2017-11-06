@@ -19,11 +19,9 @@ class Dog(Animal):
         self.health += 5
         return self
 
-animal3 = Dog('leo', 6).displayHealth()
+animal3 = Dog('tiantian', 6).displayHealth()
 animal3.walk().walk().run().run().pet().displayHealth()
-#
-# animal3 = Dog('leo', 4).display_health()
-# animal3.walk().walk().run().run().pet().display_health()
+
 class Dragon(Animal):
     def __init__(self, name, health=170):
         super(Dragon, self).__init__(name, health)    # use super to call the Human __init__ method
