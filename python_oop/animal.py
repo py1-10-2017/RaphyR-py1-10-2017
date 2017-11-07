@@ -1,31 +1,38 @@
 class Animal(object):
-    def __init__(self, name, health):
+    def __init__(self, name):
         self.name = name
-        self.health = health
+        self.health = 100
+
     def walk(self):
-        self.health += 10
+        self.health += 1
         return self
+
     def run(self):
         self.health -= 5
         return self
+
     def displayHealth(self):
         print self.health
         return self
+
+animal1 = Animal('tiantian')
+animal1.walk().walk().run().run().displayHealth()
+
 class Dog(Animal):
-    def __init__(self, name, legs, health=150):
-        super(Dog, self).__init__(name, health)
-        self.legs = legs
+    def __init__(self, name):
+        super(Dog, self).__init__(name)
+        self.health = 150
     def pet(self):
         self.health += 5
         return self
 
-animal3 = Dog('tiantian', 6).displayHealth()
-animal3.walk().walk().run().run().pet().displayHealth()
+dog = Dog("Rambo")
+dog.walk().walk().walk().run().run().pet().displayHealth()
 
 class Dragon(Animal):
-    def __init__(self, name, health=170):
+    def __init__(self, name):
         super(Dragon, self).__init__(name, health)    # use super to call the Human __init__ method
-        self.stealth = 10                # every Ninja starts off with 10 stealth
+        self.health = 10                # every Ninja starts off with 10 stealth
     def fly(self):
         self.health -= 10
     def displayHealth(self):
