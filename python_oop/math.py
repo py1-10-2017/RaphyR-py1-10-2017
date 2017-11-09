@@ -4,10 +4,12 @@ class MathDojo(object):
     def add(self, *args):
         for i in args:
             if type(i) == list or type(i) == tuple:
+                print str(i) + " is a tuple or list"
                 for k in i:
+                    print k
                     self.result += k
-                print "true"
             else:
+                print i
                 self.result += i
         return self
     def subtract(self, *args):
@@ -21,4 +23,4 @@ class MathDojo(object):
 
 
 md = MathDojo()
-print(md.add([1,2,5,7]).subtract(1).result)
+print(md.add(4).subtract(1).result)
