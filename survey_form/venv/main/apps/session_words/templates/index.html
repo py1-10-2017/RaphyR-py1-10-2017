@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Session words</title>
+  <style>
+  .row {
+    width: 100%;
+    display: flex;
+  }
+  .col-6 {
+    width: 50%;
+  }
+
+  form {
+    height: 500px;
+    border-right: 2px solid black;
+  }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div class="col-6">
+      <form action="/session_words/add_word" method="post">
+        <label for="word">Add a new word</label><br>
+        <input type="text" name="word"><br>
+        <label for="color">Choose a color</label>
+        <select name="color">
+          <option value="red">Red</option>
+          <option value="green">Green</option>
+          <option value="blue">Blue</option>
+        </select><br>
+        <input type="checkbox" name="check">
+        <label for="check">show in BIG fonts!</label><br>
+        <input type="submit" value="Add to Session" style="height:20px;">
+      </form>
+    </div>
+    <div class="col-6">
+      <input type="submit" value="Clear Session" style="height:20px;">
+    </div>
+  </div>
+</body>
+</html>
