@@ -17,7 +17,7 @@ from django.conf.urls import url, include
 
 urlpatterns = [
     # url(r'^', include('apps.multiple_apps.urls')),
-    url(r'^surveys/', include('apps.surveys.urls')),
-    url(r'^blogs/', include('apps.blogs.urls')),
-    url(r'^users/', include('apps.users.urls')),
+    url(r'^surveys/', include('apps.surveys.urls'), namespace="surveys"),
+    url(r'^blogs/', include('apps.blogs.urls'), namespace="blogs"),
+    url(r'^users/', include('apps.users.urls'), namespace="users"),
 ]

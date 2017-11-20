@@ -1,11 +1,11 @@
+# Inside your app's urls.py file
 from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.index),
-    url(r'^new$', views.new),
-    url(r'^create$', views.create),
-    url(r'^(?P<blog_id>\d+)$', views.show),
-    url(r'^(?P<blog_id>\d+)/edit$', views.edit),
-    url(r'^(?P<blog_id>\d+)/delete$', views.delete),
+    url(r'^$', views.toindex, name='my_index'),
+    url(r'^this_app/new$', views.new, name='my_new'),
+    url(r'^this_app/(?P<id>\d+)/edit$', views.edit, name='my_edit'),
+    url(r'^this_app/(?P<id>\d+)/delete$', views.delete, name='my_delete'),
+    url(r'^this_app/(?P<id>\d+)$', views.show, name='my_show'),
 ]
