@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 
 urlpatterns = [
     # url(r'^', include('apps.multiple_apps.urls')),
-    url(r'^orm/', include('apps.orm.urls')),
-    url(r'^dojo_ninjas/', include('apps.dojo_ninjas.urls'))
+    url(r'^orm/', include('apps.orm.urls', namespace="orm")),
+    url(r'^dojo_ninjas/', include('apps.dojo_ninjas.urls', namespace="ninjas")),
+    url(r'^semirestful_users/', include('apps.semirestful_users.urls', namespace="users")),
 ]
