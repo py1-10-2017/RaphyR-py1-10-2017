@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Are you sure?</title>
+</head>
+<body>
+  <body>
+        <h2>Are you sure you want to delete the following course?</h2>
+        <p><strong>Name: </strong>{{ course.name }}</p>
+        <p><strong>Description: </strong>{{ course.desc }}</p>
+        <a href="/courses"><button type="">NO</button></a><a href="/courses/{{ course.id }}/delete"><button>Yes! I want to delete this</button></a>   </body>
+</body>
+</html>

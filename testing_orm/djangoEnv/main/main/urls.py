@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^orm/', include('apps.orm.urls', namespace="orm")),
     url(r'^dojo_ninjas/', include('apps.dojo_ninjas.urls', namespace="ninjas")),
     url(r'^semirestful_users/', include('apps.semirestful_users.urls', namespace="users")),
+    url(r'^courses/', include('apps.courses.urls', namespace="courses"))
 ]
